@@ -90,7 +90,7 @@ The matching HID report descriptor (in `usbd_hid.c`) defines a Generic Desktop J
 
 The shifter uses pre-defined numeric ranges (thresholds) on the X/Y ADC values for each gear gate.
 
-* ADC resolution: 12-bit, values 0–4095 (mapped logically to 0–1023 ranges used by the original Arduino code)
+* ADC resolution: 12-bit, values 0-4095 (mapped logically to 0-1023 ranges used by the original Arduino code)
 * For each gate `i` in `[0..5]` there are four thresholds:
 
   * `lowThresholdX[i]`, `highThresholdX[i]`
@@ -228,7 +228,7 @@ Pressing gears on the physical shifter should toggle the corresponding buttons i
 * The behavior of the original Arduino `Joystick` library is reproduced using a custom HID report descriptor and STM32 USB Device HID class.
 * EEPROM has been replaced with a simple Flash page-based storage structure.
 * `Serial` operations are implemented using `HAL_UART_Transmit` / `HAL_UART_Receive` with a small integer parser and a minimal JSON-like parser for arrays.
-* ADC resolution differences (10-bit vs 12-bit) are accounted for by using the same nominal 0–1023 ranges in thresholds; you can adjust scaling if needed.
+* ADC resolution differences (10-bit vs 12-bit) are accounted for by using the same nominal 0-1023 ranges in thresholds; you can adjust scaling if needed.
 
 ---
 
